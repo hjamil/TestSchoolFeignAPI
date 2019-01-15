@@ -1,0 +1,52 @@
+server:
+  #Use port: 0 to use randomly generated port number  
+  port: 8071
+  contextPath: /h/jamil/rest
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    preferIpAddress: true
+    leaseRenewalIntervalInSeconds: 5
+    leaseExpirationDurationInSeconds: 8
+    metadata-map:
+      management.port: ${management.port:8081}
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 30000
+  threadpool:
+    default:
+      coreSize: 400
+
+  ribbon:
+    ReadTimeout: 30000
+
+spring:
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/SCHOOL_A?useUnicode=yes&characterEncoding=UTF-8
+    username: SCHOOL_A
+    password: SCHOOL_A
+    tomcat:
+      initial-size: 1
+      max-active: 200
+      validationQuery: SELECT 1
+      testWhileIdle: true
+      testOnBorrow: true
+  jpa:
+    properties:
+      hibernate:
+        default_schema: SCHOOL_A
+    hibernate:
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      ddl-auto: none
+
