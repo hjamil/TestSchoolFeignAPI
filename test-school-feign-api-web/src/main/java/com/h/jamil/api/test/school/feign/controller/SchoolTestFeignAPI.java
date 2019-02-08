@@ -6,6 +6,7 @@ import io.swagger.annotations.*;
 import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.web.bind.annotation.*;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
@@ -14,7 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @RestController
-@EnableAutoConfiguration
+@EnableAutoConfiguration(exclude = HibernateJpaAutoConfiguration.class)
 @EnableDiscoveryClient
 @EnableSwagger2
 @Api(tags = "School.Test.Feign", value = "/h/jamil/rest/v1/school/test/feign", description = "HJamil School Test API Feign")

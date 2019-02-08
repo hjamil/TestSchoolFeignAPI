@@ -136,34 +136,34 @@
 
     </dependencies>
 
-    <!--<build>-->
-        <!--<plugins>-->
-            <!--<plugin>-->
-                <!--<groupId>org.springframework.boot</groupId>-->
-                <!--<artifactId>spring-boot-maven-plugin</artifactId>-->
-            <!--</plugin>-->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
 
-            <!--<plugin>-->
-                <!--<groupId>pl.project13.maven</groupId>-->
-                <!--<artifactId>git-commit-id-plugin</artifactId>-->
-                <!--<version>2.2.1</version>-->
-                <!--<executions>-->
-                    <!--<execution>-->
-                        <!--<phase>validate</phase>-->
-                        <!--<goals>-->
-                            <!--<goal>revision</goal>-->
-                        <!--</goals>-->
-                    <!--</execution>-->
-                <!--</executions>-->
-                <!--<configuration>-->
-                    <!--<dateFormat>yyyyMMdd-HHmmss</dateFormat>&lt;!&ndash;  human-readable part of the version number &ndash;&gt;-->
-                    <!--<dotGitDirectory>${project.basedir}/.git</dotGitDirectory>-->
-                    <!--<generateGitPropertiesFile>true</generateGitPropertiesFile>&lt;!&ndash; somehow necessary. otherwise the variables are not available in the pom &ndash;&gt;-->
-                <!--</configuration>-->
-            <!--</plugin>-->
+            <plugin>
+                <groupId>pl.project13.maven</groupId>
+                <artifactId>git-commit-id-plugin</artifactId>
+                <version>2.2.1</version>
+                <executions>
+                    <execution>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>revision</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <dateFormat>yyyyMMdd-HHmmss</dateFormat><!--  human-readable part of the version number -->
+                    <dotGitDirectory>${project.basedir}/.git</dotGitDirectory>
+                    <generateGitPropertiesFile>true</generateGitPropertiesFile><!-- somehow necessary. otherwise the variables are not available in the pom -->
+                </configuration>
+            </plugin>
 
-        <!--</plugins>-->
-    <!--</build>-->
+        </plugins>
+    </build>
 
 
 </project>

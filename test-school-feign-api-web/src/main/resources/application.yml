@@ -6,7 +6,7 @@ server:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://discovery:8761/eureka/
   instance:
     preferIpAddress: true
     leaseRenewalIntervalInSeconds: 5
@@ -31,7 +31,7 @@ hystrix:
 spring:
   datasource:
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/SCHOOL_A?useUnicode=yes&characterEncoding=UTF-8
+    url: jdbc:mysql://mysql-dock:3306/SCHOOL_A?useUnicode=yes&characterEncoding=UTF-8
     username: SCHOOL_A
     password: SCHOOL_A
     tomcat:
@@ -49,4 +49,8 @@ spring:
         implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
       ddl-auto: none
+  data:
+    jpa:
+      repositories:
+        enabled: false
 
