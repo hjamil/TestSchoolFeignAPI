@@ -1,2 +1,2 @@
-docker run --name=test-school-feign-api --network=my-custom-net -d -p 8071:8071 deca81a9399d
+docker run --name=test-school-feign-api --network=my-custom-net -d -p 8071:8071 78bbf7bfff06
 docker logs test-school-feign-api
