@@ -1,7 +1,7 @@
 package com.h.jamil.api.test.school.feign.controller;
 
 import com.h.jamil.api.test.school.feign.impl.SchoolTestFeignAPIImpl;
-import com.h.jamil.api.test.school.entity.Student;
+import com.h.jamil.api.test.school.domain.Student;
 import io.swagger.annotations.*;
 import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +30,7 @@ public class SchoolTestFeignAPI {
     // Define information of this API for displaying on Swagger
     @ApiOperation(value = "Inquiry a student", nickname = "getStudent", notes = "This API is used for inquiry a student.")
     // Define information of HTTP response for this API for displaying on Swagger
-    @ApiResponses(value = {@ApiResponse(code = 200, message = "Success"),
+    @ApiResponses(value = {@ApiResponse(code = 200, message = "Success", response = Student.class),
             @ApiResponse(code = 400, message = "Bad Request"),
             @ApiResponse(code = 401, message = "Unauthorized"),
             @ApiResponse(code = 403, message = "Forbidden"),
@@ -55,7 +55,7 @@ public class SchoolTestFeignAPI {
     // Define information of this API for displaying on Swagger
     @ApiOperation(value = "List students", nickname = "getStudents", notes = "This API is used to list students.")
     // Define information of HTTP response for this API for displaying on Swagger
-    @ApiResponses(value = {@ApiResponse(code = 200, message = "Success"),
+    @ApiResponses(value = {@ApiResponse(code = 200, message = "Success", response = Student.class),
             @ApiResponse(code = 400, message = "Bad Request"),
             @ApiResponse(code = 401, message = "Unauthorized"),
             @ApiResponse(code = 403, message = "Forbidden"),

@@ -1,6 +1,6 @@
 package com.h.jamil.api.test.school.feign.external;
 
-import com.h.jamil.api.test.school.entity.Student;
+import com.h.jamil.api.test.school.domain.Student;
 import org.springframework.cloud.netflix.feign.EnableFeignClients;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.PathVariable;
