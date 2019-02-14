@@ -18,7 +18,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
 @EnableAutoConfiguration(exclude = HibernateJpaAutoConfiguration.class)
 @EnableDiscoveryClient
 @EnableCircuitBreaker
-@ComponentScan(basePackages = "com.h.jamil.api.test.school.feign")
+@ComponentScan(basePackages = {"com.h.jamil.api.test.school.feign", "com.h.jamil.api.framework"})
 public class SchoolTestFeignAPIApp {
 
     public static void main(String[] args) {

@@ -1,5 +1,7 @@
 package com.h.jamil.api.test.school.feign.controller;
 
+import com.h.jamil.api.framework.utility.ELKLogger;
+import com.h.jamil.api.framework.utility.HostInfo;
 import com.h.jamil.api.test.school.feign.impl.SchoolTestFeignAPIImpl;
 import com.h.jamil.api.test.school.domain.Student;
 import io.swagger.annotations.*;
@@ -21,6 +23,8 @@ import java.util.List;
 @Api(tags = "School.Test.Feign", value = "/h/jamil/rest/v1/school/test/feign", description = "HJamil School Test API Feign")
 @RequestMapping(value = "/v1/school/test/feign")
 public class SchoolTestFeignAPI {
+    // Define Logback
+    private static final ELKLogger log = new ELKLogger(SchoolTestFeignAPI.class);
 
     @Autowired
     private SchoolTestFeignAPIImpl controllerImpl;
@@ -47,6 +51,8 @@ public class SchoolTestFeignAPI {
                        @PathVariable(value = "studentId") Integer studentId,
                        HttpServletRequest request) throws Exception {
 
+        log.info(HostInfo.getHostAddressForLog() + " " + request.getMethod() + " " + HostInfo.getFullURL(request) + " INITIATED...");
+
         return controllerImpl.getStudent(studentId);
     }
 
@@ -68,6 +74,8 @@ public class SchoolTestFeignAPI {
     public
     @ResponseBody
     List<Student> getStudents(HttpServletRequest request) throws Exception {
+
+        log.info(HostInfo.getHostAddressForLog() + " " + request.getMethod() + " " + HostInfo.getFullURL(request) + " INITIATED...");
 
         return controllerImpl.getStudents();
     }
